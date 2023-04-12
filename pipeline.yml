@@ -1,0 +1,12 @@
+agents:
+  queue: "default"
+
+steps:
+  - label: "Script building"
+    command: "script.sh $$SERVER"
+    env:
+      SERVER: "server-a"
+  
+
+
+    
