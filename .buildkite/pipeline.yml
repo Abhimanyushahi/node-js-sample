@@ -12,7 +12,7 @@ steps:
     agents:
       hostname: "instance-1"
 
-  - labels: "3rd Job: Checking agent"
+  - label: "3rd Job: Checking agent"
     command: echo "2nd agent"
     agents:
       tag: "instance-2"
