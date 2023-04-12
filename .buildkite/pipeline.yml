@@ -1,0 +1,22 @@
+steps:
+  - label: "Script building"
+    command: "script.sh $$SERVER"
+    env:
+      SERVER: "server-a"
+    agents:
+      tag: "abhi"
+
+  - labels: "Printing build id"
+    command: echo "First agent"
+    agents:
+      hostname: "instance-1"
+
+  - labels: "Printing build id"
+    command: echo "2nd agent"
+    agents:
+      tag: "instance-2"
+ 
+
+
+
+    
