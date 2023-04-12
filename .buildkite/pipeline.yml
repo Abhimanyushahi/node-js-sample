@@ -1,7 +1,7 @@
 name: First pipeline file
 steps:
   - label: "1st Job: Script building"
-    command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER &"
+    command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER"
     env:
       SERVER: "server-a"
     agents:
@@ -13,7 +13,7 @@ steps:
       hostname: "instance-1"
 
   - label: "3rd Job: Checking agent"
-    command: "chmod +x ./scripts/script.sh; ./scripts/script.sh $$SERVER &"
+    command: "chmod +x ./scripts/script.sh; ./scripts/script.sh $$SERVER"
     env:
       SERVER: "instance-2"
     agents:
