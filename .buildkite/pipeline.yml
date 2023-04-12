@@ -1,7 +1,7 @@
 name: First pipeline file
 steps:
   - label: "1st Job: Script building"
-    command: "./scripts/script.sh $$SERVER"
+    command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER"
     env:
       SERVER: "server-a"
     agents:
