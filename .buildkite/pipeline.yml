@@ -7,7 +7,7 @@ steps:
     agents:
       tag: "abhi"
 
-  - labels: "2nd Job: Checking agent"
+  - label: "2nd Job: Checking agent"
     command: echo "First agent" 
     agents:
       hostname: "instance-1"
