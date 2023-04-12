@@ -1,22 +1,19 @@
+name: First pipeline file
 steps:
-  - label: "Script building"
+  - label: "1st Job: Script building"
     command: "script.sh $$SERVER"
     env:
       SERVER: "server-a"
     agents:
       tag: "abhi"
 
-  - labels: "Printing build id"
-    command: echo "First agent"
+  - labels: "2nd Job: Checking agent"
+    command: echo "First agent" 
     agents:
       hostname: "instance-1"
 
-  - labels: "Printing build id"
+  - labels: "3rd Job: Checking agent"
     command: echo "2nd agent"
     agents:
       tag: "instance-2"
  
-
-
-
-    
