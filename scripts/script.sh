@@ -1,6 +1,6 @@
 #! /bin/bash
 
-nmp install
+npm install
 npm start
 
 echo "Env Variable !"
