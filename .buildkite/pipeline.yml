@@ -1,21 +1,8 @@
-name: First pipeline file
+name: Dev pipline
 steps:
-  - label: "1st Job: Script building"
-    command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER"
-    env:
-      SERVER: "server-a"
+- label: "2nd Job: Checking dev"
+    command: cat ./scripts/dev.txt 
+    branches: "dev"
     agents:
-      tag: "abhi"
+      tag: "dev"
 
-  - label: "2nd Job: Checking agent"
-    command: echo "First agent" 
-    agents:
-      hostname: "instance-1"
-
-  - label: "3rd Job: Checking agent"
-    command: "chmod +x ./scripts/script.sh; ./scripts/script.sh $$SERVER"
-    env:
-      SERVER: "instance-2"
-    agents:
-      tag: "instance-2"
- 
