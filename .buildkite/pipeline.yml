@@ -1,6 +1,6 @@
 name: Dev pipline
 steps:
-- label: "2nd Job: Checking dev"
+  - label: "2nd Job: Checking dev"
     command: cat ./scripts/dev.txt 
     branches: "dev"
     agents:
