@@ -1,11 +1,14 @@
 name: Test pipeline file
-
-steps:      
-  - command: |
-      docker run -dit --name os1 -p 80:80 nginx:latest
+agents:
+  stage: deploy
+steps:
+  - label: Image Building
+    command: |
+      docker build -t myos:latest .      
+  - label: Docker runing
+    command: |
+      docker run -dit --name os1 -p 80:80 myos:latest
       docker ps
-    agents:
-      stage: deploy
   - command: curl http://localhost
     label: runing localhost
     agents:
