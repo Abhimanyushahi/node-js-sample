@@ -2,10 +2,10 @@ steps:
   - label: "Validation check"
     command: ./scripts/validation_tests.sh
     key: "validation-check"
-    branch: dev
+    branches: dev
   - label: "Run regression only if validation check is passed"
     depends_on: "validation-check"
-    branch: dev
+    branches: dev
     command: |
       if [ $$(buildkite-agent step get "outcome" --step "validation-check") == "passed" ]; then
          cat <<- YAML | buildkite-agent pipeline upload
