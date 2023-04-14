@@ -1,12 +1,11 @@
 name: First pipeline file
 agents:
-  queue: default
+  stage: deploy
 steps:
-  - label: "1st Job: Script building"
-    command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER"
-    branches: "master"
-    env:
-      SERVER: "server-a"
-    agents:
-      tag: "master"
+  - label: "1st Job: localhost runing"
+    command: curl http://localhost
+    branches: "feature"
+    plugins:
+      docker#v3.3.0:
+        image: "nginx:latest"
 
