@@ -2,7 +2,7 @@ name: Test pipeline file
 
 steps:      
   - command: |
-      docker run -dit --name os1 -p 80:80 nginx:latest
+      docker run -dit --name os3 -p 80:80 nginx:latest
       docker ps
     agents:
       stage: deploy
