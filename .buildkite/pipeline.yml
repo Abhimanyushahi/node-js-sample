@@ -6,6 +6,9 @@ steps:
       echo $BUILDKITE_COMMIT
       echo "build ID:"
       echo $BUILDKITE_BUILD_ID
-
+      echo "printing testing env"
+      echo $$myenv
+      echo "pupose: "
+      echo $purpose
     branches: "dev"
 
