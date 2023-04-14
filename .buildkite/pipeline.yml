@@ -4,7 +4,7 @@ steps:
   - command: |
       echo " Welcome to my page!" > index.html
       cat index.html
-      curl -I http://localhost
+      curl http://127.0.0.1
     branches: test
     plugins:
       - docker#v3.2.0:
