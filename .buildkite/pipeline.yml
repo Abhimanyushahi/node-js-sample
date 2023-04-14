@@ -1,14 +1,16 @@
-name: Dev pipline
 steps:
-  - label: "2nd Job: Checking dev"
+  - label: "Validation check"
+    command: ./scripts/validation_tests.sh
+    key: "validation-check"
+    branch: dev
+  - label: "Run regression only if validation check is passed"
+    depends_on: "validation-check"
+    branch: dev
     command: |
-      echo "SHA ID:"
-      echo $BUILDKITE_COMMIT
-      echo "build ID:"
-      echo $BUILDKITE_BUILD_ID
-      echo "printing testing env"
-      echo $$myenv
-      echo "pupose: "
-      echo $purpose
-    branches: "dev"
-
+      if [ $$(buildkite-agent step get "outcome" --step "validation-check") == "passed" ]; then
+         cat <<- YAML | buildkite-agent pipeline upload
+         steps:
+           - label: "Run Regression"
+             command: ./scripts/regression_tests.sh
+      YAML
+      fi
