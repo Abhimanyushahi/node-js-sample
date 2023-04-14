@@ -1,7 +1,9 @@
 name: Test pipeline file
 
 steps:
-  - command: echo " Welcome to my page!" > index.html
+  - command: |
+      echo " Welcome to my page!" > index.html
+      curl localhost
     branches: test
     plugins:
       - docker#v3.2.0:
