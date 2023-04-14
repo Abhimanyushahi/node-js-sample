@@ -1,4 +1,6 @@
 name: First pipeline file
+agents:
+  queue: default
 steps:
   - label: "1st Job: Script building"
     command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER"
