@@ -1,6 +1,4 @@
 name: Dev pipline
-agents:
-  queue: "default"
 steps:
   - label: "2nd Job: Checking dev"
     command: cat ./scripts/dev.txt 
