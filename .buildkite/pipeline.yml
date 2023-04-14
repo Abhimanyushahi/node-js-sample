@@ -1,6 +1,11 @@
 name: Dev pipline
 steps:
   - label: "2nd Job: Checking dev"
-    command: echo $BUILDKITE_COMMIT
+    command: |
+      echo "SHA ID:"
+      echo $BUILDKITE_COMMIT
+      echo "build ID:"
+      echo $BUILDKITE_BUILD_ID
+
     branches: "dev"
 
