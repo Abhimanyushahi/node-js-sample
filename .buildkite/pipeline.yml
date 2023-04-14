@@ -1,6 +1,6 @@
 name: Dev pipline
 agents:
-  queue: deafult
+  queue: "deafult"
 steps:
   - label: "2nd Job: Checking dev"
     command: cat ./scripts/dev.txt 
