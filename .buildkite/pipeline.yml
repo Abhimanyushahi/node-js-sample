@@ -1,10 +1,13 @@
 name: Test pipeline file
+
 steps:
-  - label: "3rd Job: Checking agent"
-    command: "chmod +x ./scripts/script.sh; ./scripts/script.sh $$SERVER"
-    branches: "test"
-    env:
-      SERVER: "instance-2"
+  - command: echo " Welcome to my page!" > index.html
+    branches: test
+    plugins:
+      - docker#v3.2.0:
+          image: "nginx:latest"
+          workdir: /usr/share/nginx/html
     agents:
-      tag: "test"
+      stage: deploy
+
  
