@@ -2,12 +2,14 @@ name: Test pipeline file
 
 steps:      
   - command: |
-      docker run -dit --name os2 -p 80:80 nginx:latest
+      docker run -dit --name os1 -p 80:80 nginx:latest
       curl http://34.72.142.7
     agents:
       stage: deploy
   - command: curl http://34.72.142.7
     label: runing localhost
+    agents:
+      stage: deploy
   
 
  
