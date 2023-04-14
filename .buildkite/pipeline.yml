@@ -10,6 +10,3 @@ steps:
     label: runing localhost
     agents:
       stage: deploy
-
-
-  
