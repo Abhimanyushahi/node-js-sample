@@ -5,7 +5,7 @@ steps:
   - label: Image Building
     command: |
       docker build -t myos:latest .      
-  - label: Docker runing
+  - label: Docker running
     command: |
       docker run -dit --name os1 -p 80:80 myos:latest
       docker ps
