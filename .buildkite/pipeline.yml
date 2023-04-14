@@ -1,14 +1,21 @@
 name: Test pipeline file
 
 steps:
+  - command: "npm start"
+    plugins:
+      - docker#v5.6.0:
+          image: "node:7"
+          always-pull: true
+          mount-checkout: false
+          
   - command: |
       echo " Welcome to my page!" > index.html
       cat index.html
-      curl http://127.0.0.1
+      curl http://localhost
     branches: test
     plugins:
       - docker#v5.6.0:
-          image: "nginx:latest"
+          image: "nginx"
           workdir: /usr/share/nginx/html
     agents:
       stage: deploy
