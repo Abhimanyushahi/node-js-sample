@@ -1,6 +1,6 @@
 name: Dev pipline
 steps:
   - label: "2nd Job: Checking dev"
-    command: echo $BUILDKITE_AGENT_NAME 
+    command: echo $BUILDKITE_COMMIT
     branches: "dev"
 
