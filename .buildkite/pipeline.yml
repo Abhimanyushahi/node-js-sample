@@ -9,4 +9,3 @@ steps:
       SERVER: "server-a"
     agents:
       stage: "deploy"
-
