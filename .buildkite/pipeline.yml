@@ -2,11 +2,11 @@ name: First pipeline file
 agents:
   queue: default
 steps:
-  - label: "1st Job: Script building"
-    command: "chmod +x ./scripts/script.sh && ./scripts/script.sh $$SERVER"
-    branches: "master"
-    env:
-      SERVER: "server-a"
+  - label: "1st Job: Pyttest Testing "
+    command: |
+      pip install -r ./test/requirements.txt
+      pytest -v ./test/test_algo.py
+    branches: "test-analytics"
     agents:
-      tag: "master"
+      stage: "deploy"
 
