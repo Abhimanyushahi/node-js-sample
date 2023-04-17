@@ -8,5 +8,5 @@ steps:
     env:
       SERVER: "server-a"
     agents:
-      tag: "master"
+      stage: "deploy"
 
