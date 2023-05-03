@@ -11,7 +11,6 @@
     docker_image_tag: "18"
     execute_commands:
     - "# yarn install"
-    - "cd EmployeeDB"
     - "npm install"
     - ""
     volume_mappings:
